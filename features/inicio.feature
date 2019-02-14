@@ -11,4 +11,5 @@ Cenário: Buscar no Submarino por Iphone X
 Cenário: Colocar Iphone X no carrinho
     Dado eu tenha localizado o iphone X
     Quando seleciono o iphone x
-    Então coloco o "Iphone X" "64gb" no "Meu carrinho"
+    Então coloco o "Meu carrinho" o "Iphone X"  
+    E espero "64gb" e "Cinza"

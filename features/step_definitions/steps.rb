@@ -1,6 +1,6 @@
 Dado("que eu esteja no site Submarino") do
-    url = 'http://www.submarino.com.br'
-  visit(url) 
+    @url = 'http://www.submarino.com.br'
+  visit(@url) 
 end
 
 Quando("busco por iphone x") do
@@ -10,6 +10,6 @@ end
 
 Então("localizo o produto iphone x") do
   assert_text('iphone x')
-  url = 'https://www.submarino.com.br/busca/iphone-x'
-  puts(url)
+  @url = current_url
+  puts(@url)
 end
