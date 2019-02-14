@@ -10,6 +10,9 @@ end
 
 Então("localizo o produto iphone x") do
   assert_text('iphone x')
+end
+
+Então("estou na url pesquisada") do 
   @url = current_url
   puts(@url)
 end

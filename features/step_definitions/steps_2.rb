@@ -1,9 +1,15 @@
 
 Dado("eu tenha localizado o iphone X") do
 
-    visit('https://www.submarino.com.br/busca/iphone-x')
+  steps %{
+    Dado que eu esteja no site Submarino
+     Quando busco por iphone x
+     Então localizo o produto iphone x 
+     E estou na url pesquisada  
+   }
 
-  
+   sleep 2
+
     assert_text('iphone x')
 
   end
@@ -18,7 +24,7 @@ Dado("eu tenha localizado o iphone X") do
 
   end
 
-  sleep 2
+  sleep 3
 
   Então("coloco o {string} o {string}") do |string, string2|
     assert_text('Meu Carrinho' , 'Iphone X')
