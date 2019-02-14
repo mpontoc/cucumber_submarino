@@ -18,9 +18,11 @@ Dado("eu tenha localizado o iphone X") do
 
     find(:xpath, '//img[contains(@src,"132723729_1GG.png")]').click
    
-   sleep 4
+   sleep 2
+
+    find(:xpath, '//a[contains(.,"Comprar")]', wait: 5).click
     
-    click_on('Comprar')
+    #click_on('Comprar')
 
   end
 
