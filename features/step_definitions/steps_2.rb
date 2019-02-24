@@ -33,5 +33,5 @@ Dado("eu tenha localizado o iphone X") do
   end
   
   Então("espero {string} e {string}") do |string, string2|
-    assert_text('64gb' , 'Cinza')
+    assert_no_text('64gb' , 'Cinza')
   end
