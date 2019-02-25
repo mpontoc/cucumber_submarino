@@ -1,5 +1,5 @@
 
-Dado("eu tenha localizado o iphone X") do
+Dado("eu tenha localizado o iphone X {int}GB") do |int|
 
   steps %{
     Dado que eu esteja no site Submarino
@@ -14,7 +14,7 @@ Dado("eu tenha localizado o iphone X") do
 
   end
   
-  Quando("seleciono o iphone X 64GB") do
+  Quando("seleciono o iphone X {int}GB") do |int|
 
     find(:xpath, '//img[contains(@src,"132723729_1GG.png")]').click
    

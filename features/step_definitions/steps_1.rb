@@ -3,12 +3,12 @@ Dado("que eu esteja no site Submarino") do
   visit(@url) 
 end
 
-Quando("busco por iphone x") do
+Quando("busco por iphone X {int}GB") do |int|
   fill_in('h_search-input', :with => 'iphone x 64GB')
   click_button('h_search-btn')
 end
 
-Então("localizo o produto iphone x") do
+Então("localizo o produto iphone X {int}GB") do |int|
   assert_text('iphone x', '64GB')
 end
 
