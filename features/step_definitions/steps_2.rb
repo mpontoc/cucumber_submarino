@@ -1,18 +1,15 @@
 
-Dado("eu tenha localizado o iphone X {int}GB") do |int|
+Dado("que eu procure por iphone X {int}GB") do |int|
 
   steps %{
-    Dado que eu esteja no site Submarino
-     Quando busco por iphone X 64GB
-     Então localizo o produto iphone X 64GB
-     E estou na url pesquisada  
+    Dado que eu esteja no site Submarino 
    }
 
-   sleep 2
-
-    assert_text('iphone x')
+   fill_in('h_search-input', :with => 'iphone x 64GB')
+   click_button('h_search-btn')
 
   end
+
   
   Quando("seleciono o iphone X {int}GB") do |int|
 
@@ -20,7 +17,7 @@ Dado("eu tenha localizado o iphone X {int}GB") do |int|
    
    sleep 2
 
-    find(:xpath, '//a[contains(.,"Comprar")]', wait: 5).click
+    find(:xpath, '//a[contains(.,"Comprar")]', wait: 2).click
     
     #click_on('Comprar')
 
@@ -28,7 +25,7 @@ Dado("eu tenha localizado o iphone X {int}GB") do |int|
 
   sleep 3
 
-  Então("coloco o {string} o {string}") do |string, string2|
+  Então("entro no {string} o {string}") do |string, string2|
     assert_text('Meu Carrinho' , 'Iphone X')
   end
   

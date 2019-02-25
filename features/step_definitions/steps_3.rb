@@ -1,25 +1,24 @@
-Dado("eu tenha localizado o iphone X {int}GB") do |int|
+Dado("que eu agora procure por iphone X {int}GB") do |int|
 
   steps %{
-    Dado que eu esteja no site Submarino
-     Quando busco por iphone X 256GB
-     Então localizo o produto iphone X 256GB
-     E estou na url pesquisada  
+    Dado que eu esteja no site Submarino 
    }
 
-   sleep 2
 
-    assert_text('iphone x')
+   fill_in('h_search-input', :with => 'iphone x 256GB')
+   click_button('h_search-btn')
+
+   sleep 2
 
   end
   
-  Quando("seleciono o iphone X {int}GB") do |int|
+  Quando("seleciono agora o iphone X {int}GB") do |int|
 
-    find(:xpath, '//img[contains(@src,"132723729_1GG.png")]').click
+    find(:xpath, '//img[contains(@src,"132722700_1GG.jpg")]').click
    
    sleep 2
 
-    find(:xpath, '//a[contains(.,"Comprar")]', wait: 5).click
+    find(:xpath, '//a[contains(.,"Comprar")]', wait: 2).click
     
     #click_on('Comprar')
 
@@ -27,14 +26,14 @@ Dado("eu tenha localizado o iphone X {int}GB") do |int|
 
   sleep 3
 
-  Então("coloco o {string} o {string}") do |string, string2|
+  Então("entro no {string} com {string}") do |string, string2|
     assert_text('Meu Carrinho' , 'Iphone X')
   end
   
-  Então("espero {string} e {string}") do |string, string2|
+  Então("espero agora {string} e {string}") do |string, string2|
     assert_text('256gb' , 'Prata')
   end
 
-  Mas("não espero {string} e {string}") do |string, string2|
-    assert_no_text('64gb' , 'cinza')
-end
+  Mas("não espero mais {string} e {string}") do |string, string2|
+    assert_no_text('64gb' , 'Cinza')
+  end
