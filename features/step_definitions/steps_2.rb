@@ -3,8 +3,8 @@ Dado("eu tenha localizado o iphone X") do
 
   steps %{
     Dado que eu esteja no site Submarino
-     Quando busco por iphone x
-     Então localizo o produto iphone x 
+     Quando busco por iphone X 64GB
+     Então localizo o produto iphone X 64GB
      E estou na url pesquisada  
    }
 
@@ -14,7 +14,7 @@ Dado("eu tenha localizado o iphone X") do
 
   end
   
-  Quando("seleciono o iphone x") do
+  Quando("seleciono o iphone X 64GB") do
 
     find(:xpath, '//img[contains(@src,"132723729_1GG.png")]').click
    
